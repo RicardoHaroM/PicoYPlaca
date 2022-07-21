@@ -2,7 +2,7 @@
 # Pico Y Placa Predictor
 A console aplication that in base of a plate license number, the date and time you want to be on road, tells you if the car can be on road.
 
-The aplication take into account license plates with exception (taxis, buses, diplomatic service vehicles and temporary hospitalization vehicles) also take into account holidays where the pico y placa does not apply (The holiday dates in the aplication are general holidays dates, so depending the year you are going to enter on the aplication, could exist diferent holiday dates).
+The aplication take into account license plates with exception (taxis, buses, diplomatic service vehicles and temporary hospitalization vehicles) also take into account holidays where the pico y placa does not apply (The holiday dates in the aplication are general holidays dates, so depending the year you are going to enter on the aplication, there may be different vacation dates than those of the program).
 
 
 ## Architecture
@@ -51,7 +51,7 @@ To run tests, run the following command
 ## Usage
 - Once the program is running you need to enter the plate license number, the date and time you want to be on road following the next format: XXX-0000 MM-DD-YYYY HH:HH. Ex: PCW-8909 07-22-2022 18:00 and will receive a answer if you can be on road or not
 
-- You can enter license plates with 2 letters or with 3 numbers.
+- You can also enter license plates with 2 letters or with 3 numbers.
 
 - The format for the time is in hours. Ex: 18:00.
 
