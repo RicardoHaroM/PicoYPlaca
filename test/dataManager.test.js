@@ -26,3 +26,15 @@ test('Take 1 description letter',()=>{
     
     expect(result).toStrictEqual('A')
 });
+
+test('Check if the input is in the correct format',()=>{
+    const result = DataManager.isTheInputFormatCorrect('PCW-8909 07-22-2022 14:00')
+
+    expect(result).toBe(true);
+})
+
+test('Check if the bad input is in the correct format',()=>{
+    const result = DataManager.isTheInputFormatCorrect('07-22-2022 PCW-8909 04:00')
+
+    expect(result).toBe(false);
+})
