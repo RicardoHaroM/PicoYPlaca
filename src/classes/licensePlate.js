@@ -37,16 +37,10 @@ class LicensePlate{
         return false;
     }
 
-    canBeOnRoadInADay(date){
-        if(DateManager.isAHoliday(date)) return true;
-
-        if(this.isOnRestrictionDay(date)) return false;
-
-        return true
-    }
-
-    canBeOnRoadInAnHour(driveHour){
+    canBeOnRoadInAnHour(hour){
         const {morningSchedule,afternonSchedule} = restrictionHours;
+
+        const driveHour = Number(hour.replace(':',''));
 
         if(morningSchedule.startHour<=driveHour&&morningSchedule.finishHour>=driveHour) return false
         
@@ -54,6 +48,21 @@ class LicensePlate{
     
         return true;
     }
+
+    canBeOnRoad(driveDate,driveHour){
+
+        if(this.isAExemptPlate()) return true
+
+        if(DateManager.isAHoliday(driveDate)) return true;
+
+        if(this.canBeOnRoadInAnHour(driveHour)) return true;
+        
+        if(this.isOnRestrictionDay(driveDate)) return false;
+
+        return true
+    }
+
+    
 }
 
 module.exports = LicensePlate;

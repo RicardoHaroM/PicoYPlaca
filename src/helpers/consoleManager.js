@@ -10,7 +10,7 @@ class ConsoleManager{
     
             readline.question(`${question}: `,(inputData)=>{
                 readline.close();
-                resolve(inputData);
+                resolve(inputData.trim().toUpperCase());
             });
         });
     }

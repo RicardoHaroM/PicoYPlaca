@@ -1,16 +1,21 @@
 const ConsoleManager=require('./helpers/consoleManager');
 const DataManager = require('./helpers/dataManager');
-const DateManager = require('./helpers/dateManager');
 const LicensePlate = require('./classes/licensePlate')
 
 const main =async()=>{
-    // const inputData = await ConsoleManager.getAnswerFromConsole('Ingrese su placa');
 
-    // const {plateNumber,driveDate,driveHour} = DataManager.separateInputData(inputData);
+    const inputData = await ConsoleManager.getAnswerFromConsole('Please enter the license plate number, the date and time you want to be on the road, separated by a space.\nEx: PCW-8909 08/23/2022 14:00\n');
 
-    const licensePlate = new LicensePlate('PCA-9951')
+    const {plateNumber,driveDate,driveHour} = DataManager.separateInputData(inputData);
 
-    const result = licensePlate.canBeOnRoadInAnHour(1930);
+    const carLicensePlate = new LicensePlate(plateNumber);
+
+    if(!carLicensePlate.canBeOnRoad(new Date(driveDate),driveHour)){
+        console.log('The car can not be on road because it has pico y placa restriction')
+        return
+    }
+
+    console.log('The car can be on road because it does not have pico y placa restriction')
 
 }
 
