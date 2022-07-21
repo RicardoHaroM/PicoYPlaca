@@ -20,5 +20,15 @@ module.exports ={
             dayName:'Friday',
             restrictionNumberPlates:[9,0]
         }
+    },
+    restrictionHours:{
+        morningSchedule:{
+            startHour:700,
+            finishHour:930
+        },
+        afternonSchedule:{
+            startHour:1600,
+            finishHour:1930
+        }
     }
 }

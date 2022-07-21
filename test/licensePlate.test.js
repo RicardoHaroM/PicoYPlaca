@@ -31,3 +31,33 @@ test('Check if a wekend day is a restriction day',()=>{
 
     expect(result).toBe(false);
 })
+
+test('Check if you can be on road in an morning restriction hour',()=>{
+    const licensePlate = new LicensePlate('PCA-9951')
+
+    const result = licensePlate.canBeOnRoadInAnHour(800);
+
+    expect(result).toBe(false)
+})
+
+test('Check if you can be on road in an afternon restriction hour',()=>{
+    const licensePlate = new LicensePlate('PCA-9951')
+
+    const result = licensePlate.canBeOnRoadInAnHour(1930);
+
+    expect(result).toBe(false)
+})
+
+test('Check if you can be on road in a non-restriction hour',()=>{
+    const licensePlate = new LicensePlate('PCA-9951')
+
+    const result1 = licensePlate.canBeOnRoadInAnHour(600);
+    const result2 = licensePlate.canBeOnRoadInAnHour(1000);
+    const result3 = licensePlate.canBeOnRoadInAnHour(1530);
+    const result4 = licensePlate.canBeOnRoadInAnHour(2030);
+
+    expect(result1).toBe(true)
+    expect(result2).toBe(true)
+    expect(result3).toBe(true)
+    expect(result4).toBe(true)
+})

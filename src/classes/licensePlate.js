@@ -1,9 +1,11 @@
 const DataManager = require('../helpers/dataManager');
+const DateManager = require('../helpers/dateManager')
 
 const {exemptLettersPlates} = require('../consts/exemptPlates');
-const {restrictionDays} = require('../consts/restrictionDays')
+const {restrictionDays,restrictionHours} = require('../consts/restrictions')
 
 class LicensePlate{
+    
     plateNumber;
     
     constructor(
@@ -43,8 +45,14 @@ class LicensePlate{
         return true
     }
 
-    canBeOnRoadInAnHour(){
+    canBeOnRoadInAnHour(driveHour){
+        const {morningSchedule,afternonSchedule} = restrictionHours;
+
+        if(morningSchedule.startHour<=driveHour&&morningSchedule.finishHour>=driveHour) return false
         
+        if(afternonSchedule.startHour<=driveHour&&afternonSchedule.finishHour>=driveHour) return false
+    
+        return true;
     }
 }
 

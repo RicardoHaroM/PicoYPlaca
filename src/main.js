@@ -9,9 +9,8 @@ const main =async()=>{
     // const {plateNumber,driveDate,driveHour} = DataManager.separateInputData(inputData);
 
     const licensePlate = new LicensePlate('PCA-9951')
-    const date = new Date('07/25/2022')
 
-    const result = licensePlate.isOnRestrictionDay(date)
+    const result = licensePlate.canBeOnRoadInAnHour(1930);
 
 }
 
