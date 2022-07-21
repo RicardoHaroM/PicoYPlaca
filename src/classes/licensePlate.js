@@ -1,7 +1,7 @@
 const DataManager = require('../helpers/dataManager');
 const DateManager = require('../helpers/dateManager')
 
-const {exemptLettersPlates} = require('../consts/exemptPlates');
+const {exemptLettersPlates} = require('../consts/exceptions');
 const {restrictionDays,restrictionHours} = require('../consts/restrictions')
 
 class LicensePlate{

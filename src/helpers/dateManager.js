@@ -1,4 +1,4 @@
-const { holidayDates } = require("../consts/holidaysDates");
+const { holidayDates } = require("../consts/exceptions");
 
 class DateManager{
     static isAHoliday(date){
