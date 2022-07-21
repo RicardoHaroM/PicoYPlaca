@@ -7,6 +7,14 @@ class DataManager{
             driveHour:inputArray[2],
         }
     }
+
+    static takeDescriptionLetters(plateNumber){
+        if(plateNumber.length==7){
+            return plateNumber.substring(0,2);
+        }
+        
+        return plateNumber[1];
+    }
 }
 
 module.exports = DataManager;

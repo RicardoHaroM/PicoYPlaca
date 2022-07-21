@@ -1,0 +1,24 @@
+module.exports ={
+    restrictionDays:{
+        1:{
+            dayName:'Monday',
+            restrictionNumberPlates:[1,2]
+        },
+        2:{
+            dayName:'Tuesday',
+            restrictionNumberPlates:[3,4]
+        },
+        3:{
+            dayName:'Wednesday',
+            restrictionNumberPlates:[5,6]
+        },
+        4:{
+            dayName:'Thursday',
+            restrictionNumberPlates:[7,8]
+        },
+        5:{
+            dayName:'Friday',
+            restrictionNumberPlates:[9,0]
+        }
+    }
+}
