@@ -4,7 +4,12 @@ const LicensePlate = require('./classes/licensePlate')
 
 const main =async()=>{
 
-    const inputData = await ConsoleManager.getAnswerFromConsole('Please enter the license plate number, the date and time you want to be on the road, separated by a space.\nEx: PCW-8909 08/23/2022 14:00\n');
+    const inputData = await ConsoleManager.getAnswerFromConsole('Please enter the license plate number, the date and time you want to be on the road, separated by a space.\nEx: PCW-8909 08-23-2022 14:00\n');
+
+    if(!DataManager.isTheInputFormatCorrect(inputData)){
+        console.log("The input does not have the correct format");
+        return;
+    }
 
     const {plateNumber,driveDate,driveHour} = DataManager.separateInputData(inputData);
 

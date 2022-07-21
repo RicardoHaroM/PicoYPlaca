@@ -16,7 +16,7 @@ test('Check if a normal plate is a exempt plate',()=>{
 
 test('Check if a license plate is on a restriction day',()=>{
     const licensePlate = new LicensePlate('PCA-9951')
-    const date = new Date('07/25/2022')
+    const date = new Date('07-25-2022')
 
     const result = licensePlate.isOnRestrictionDay(date)
 
@@ -25,7 +25,7 @@ test('Check if a license plate is on a restriction day',()=>{
 
 test('Check if a wekend day is a restriction day',()=>{
     const licensePlate = new LicensePlate('PCA-9951')
-    const date = new Date('07/31/2022')
+    const date = new Date('07-31-2022')
 
     const result = licensePlate.isOnRestrictionDay(date)
 
